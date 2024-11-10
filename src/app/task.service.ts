@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { environment } from '../environments/environment.development';
-import { TaskDto } from './tasks/task/task.model';
+import { TaskDto, UpdateTaskDto } from './tasks/task/task.model';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +34,10 @@ export class TaskService {
 
   addTask(Task: TaskDto) {
     return this.http.post(`${this.apiUrl}`, {Task});
+  }
+
+  updateTask(Task: UpdateTaskDto) {
+    return this.http.put(`${this.apiUrl}`, {Task});
   }
 
   removeTask(id: string) {

@@ -20,6 +20,7 @@ article {
   .actions button {
     font: inherit;
     font-size: 0.9rem;
+    margin: 4px;
     cursor: pointer;
     background-color: #380774;
     color: #decdf2;

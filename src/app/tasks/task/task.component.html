@@ -1,9 +1,14 @@
+@if (isUpdatingTask) {
+  <app-edit-task [id]="task.id" [title]="task.title" [summary]="task.summary" [dueDate]="task.dueDate" (close)="onCloseUpdateTask()" />
+  }
+
 <app-shared>
     <article>
       <h2>{{ task.title }}</h2>
       <time>{{ task.dueDate | date : "fullDate" }}</time>
       <p>{{ task.summary }}</p>
       <p class="actions">
+        <button (click)="onStartUpdateTask()">Update</button>
         <button (click)="onCompleteTask()">Complete</button>
       </p>
     </article>
