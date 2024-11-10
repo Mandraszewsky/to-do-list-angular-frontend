@@ -8,7 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class TaskService {
 
-  constructor() { }
+  private tasks: any[] = []; 
+
+  constructor() { 
+    this.get().subscribe(response => {
+      this.tasks = response.tasks;
+    });
+  }
 
   private http = inject(HttpClient);
   private apiUrl = environment.apiURL + '/orders';
@@ -17,4 +23,9 @@ export class TaskService {
   public get(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
+
+  getUserTasks(userId: string) {
+    return this.tasks.filter((task) => task.userId === userId);
+}
+
 }
