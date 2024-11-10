@@ -2,7 +2,6 @@ import { Component, Input, Output, EventEmitter, inject,  } from '@angular/core'
 import { FormsModule } from '@angular/forms';
 
 import { TaskService } from '../../task.service';
-import { Task } from '../task/task.model';
 import { CommonModule } from '@angular/common';
 
 @Component({

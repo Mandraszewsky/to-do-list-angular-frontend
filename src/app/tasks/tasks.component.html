@@ -1,11 +1,16 @@
 @if (isAddingTask) {
 <app-new-task [userId]="userId" (close)="onCloseAddTask()" />
+} 
+
+@if (isFilteringTask) {
+ <app-filter-tasks [userId]="userId" (close)="onCloseFilterTask()" />
 }
 
 <section id="tasks">
   <header>
     <h2>{{ name }}'s Tasks</h2>
     <menu>
+      <button (click)="onStartFilterTask()">Filters</button>
       <button (click)="onStartAddTask()">Add Task</button>
     </menu>
   </header>
