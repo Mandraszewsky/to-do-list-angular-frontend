@@ -6,8 +6,9 @@ export interface Task {
     dueDate: string;
   }
 
-  export interface NewTaskData {
+  export interface TaskDto {
+    userId: string;
     title: string;
     summary: string;
-    date: string;
+    dueDate: string;
   }
