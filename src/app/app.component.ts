@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TaskService } from './task.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,15 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'to-do-list-angular-frontend';
+  tasks: any[] = [];
+
+  taskService = inject(TaskService);
+
+  constructor(){
+    this.taskService.get().subscribe(response => {
+      this.tasks = response.tasks;
+      console.log(response);
+    });
+  }
+
 }
