@@ -27,14 +27,21 @@ export class FilterTasksComponent {
   }
 
   onSubmit() {
-    this.taskService.getFilterList({
+    this.taskService.getFilterRequest({
       userId: this.userId,
       title: this.enteredTitle,
       summary: this.enteredSummary,
       dueDate: this.enteredDate,
-    }).subscribe(() => {
-      this.taskService.getOnRequest();
-      this.close.emit();
     });
+    this.close.emit();
+    // this.taskService.getFilterList({
+    //   userId: this.userId,
+    //   title: this.enteredTitle,
+    //   summary: this.enteredSummary,
+    //   dueDate: this.enteredDate,
+    // }).subscribe(() => {
+    //   this.taskService.getOnRequest();
+    //   this.close.emit();
+    // });
   }
 }

@@ -28,16 +28,6 @@ export class TaskService {
   }
 
   public getFilterList(Task: TaskDto): Observable<any> {
-    // const filterParams = new HttpParams().set("userId", Task.userId).set("date", Task.dueDate);
-    // const headers = new HttpHeaders().set("CustomHeader", "CustomValue");
-    //return this.http.get(this.apiUrl, {headers: headers, params: filterParams});
-
-    // let queryParams = new HttpParams();
-    // queryParams = queryParams.append("userId",Task.userId);
-    // queryParams = queryParams.append("dueDate",Task.dueDate);
-
-    // return this.http.get(this.apiFilterUrl, {params: queryParams});
-
     return this.http.post(`${this.apiFilterUrl}`, {Task});
   }
 
@@ -64,10 +54,6 @@ export class TaskService {
   removeTask(id: string) {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
-
-  // getFilterList(Task: TaskDto) {
-  //   return this.http.put(`${this.apiUrl}`, {Task});
-  // }
 
   getUserTasks(userId: string) {
     return this.tasks.filter((task) => task.userId === userId);

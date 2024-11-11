@@ -14,4 +14,9 @@ export const USERS_TEMPLATE = [
       name: 'Marcin Kowal',
       avatar: 'user-3.jpg',
     },
+    {
+      id: '4f136e9f-123c-32b1-844c-e6f3b70b9d8c',
+      name: 'Ada Nowa',
+      avatar: 'user-4.jpg',
+    },
   ];
