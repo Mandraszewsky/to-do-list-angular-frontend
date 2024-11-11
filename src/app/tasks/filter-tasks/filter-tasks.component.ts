@@ -21,7 +21,6 @@ export class FilterTasksComponent {
 
   private taskService = inject(TaskService);
 
-
   onCancel() {
     this.close.emit();
   }
@@ -34,14 +33,5 @@ export class FilterTasksComponent {
       dueDate: this.enteredDate,
     });
     this.close.emit();
-    // this.taskService.getFilterList({
-    //   userId: this.userId,
-    //   title: this.enteredTitle,
-    //   summary: this.enteredSummary,
-    //   dueDate: this.enteredDate,
-    // }).subscribe(() => {
-    //   this.taskService.getOnRequest();
-    //   this.close.emit();
-    // });
   }
 }
